@@ -1,7 +1,9 @@
 package com.kexuexiong.hippocrates.config;
 
+import com.kexuexiong.hippocrates.common.util.BaseController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -29,7 +31,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.kexuexiong.hippocrates.**"))
+                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
                 .build();
     }
 

@@ -168,7 +168,7 @@
     <!-- 4. 最终的策略 -->
     <!-- 4.1 开发环境:打印控制台-->
     <springProfile name="dev">
-        <logger name="com.sdcm.pmp" level="debug"/>
+        <logger name="com.kexuexiong" level="debug"/>
     </springProfile>
 
     <root level="info">
